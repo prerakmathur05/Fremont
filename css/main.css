@@ -420,6 +420,10 @@ img.pull-left {
 .map{
     height: 100vh;
     width: 80vw;
+    background-color: white;
+    border: none;
+    margin-left: 5px;
+
 
 }
 /* ------------------------------------------------------------------- 
@@ -1218,7 +1222,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
  * ------------------------------------------------------------------- */
 .display-1 {
     font-family: "montserrat-medium", sans-serif;
-    font-size: 7.8rem;
+    font-size: 70px;
     line-height: 1.25;
     color: #000000;
     margin-top: 0;
@@ -1229,8 +1233,8 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 }
 
 .display-2 {
-    font-family: "montserrat-medium", sans-serif;
-    font-size: 5.2rem;
+    font-family: "montserrat-bold", sans-serif;
+    font-size: 70px;
     line-height: 1.255;
     color: #000000;
     margin-top: 0;
@@ -1261,6 +1265,10 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 .col-full h1{
     display: inline;
 }
+.col-full p{
+    font-family: "montserrat", sans-serif;
+    font-size: 45px;
+}
 
 /* ------------------------------------------------------------------- 
  * responsive:
@@ -1272,7 +1280,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     }
     .display-2 {
         font-size: 4.4rem;
-    }
+    }   
 }
 
 @media only screen and (max-width: 800px) {
@@ -1282,6 +1290,11 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     .display-2 {
         font-size: 4rem;
     }
+    .col-full p{
+        font-family: "montserrat", sans-serif;
+        font-size: 30px;
+    }
+    
 }
 
 @media only screen and (max-width: 600px) {
@@ -1294,6 +1307,11 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     .subhead {
         font-size: 1.5rem;
     }
+    .col-full p{
+        font-family: "montserrat", sans-serif;
+        font-size: 30px;
+    }
+    
 }
 
 @media only screen and (max-width: 400px) {
@@ -1303,6 +1321,11 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     .display-2 {
         font-size: 3rem;
     }
+    .col-full p{
+        font-family: "montserrat", sans-serif;
+        font-size: 30px;
+    }
+    
 }
 
 
@@ -1521,7 +1544,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     letter-spacing: .25rem;
     margin-bottom: 4.8rem;
     margin-top: .9rem;
-    color: #39b54a;
+    color: white;
 }
 
 .header-nav p {
@@ -2216,6 +2239,7 @@ html.no-csstransitions .home-content__main {
     color: #010507;
     position: relative;
     color: white;
+    height: 780px;
 }
 
 .s-about .section-header.has-bottom-sep::before {
@@ -2230,7 +2254,7 @@ html.no-csstransitions .home-content__main {
 }
 
 
-/* ------------------------------------------------------------------- 
+/* ----------------------------------s--------------------------------- 
  * ## about stats
  * ------------------------------------------------------------------- */
 .about-stats {
@@ -2329,7 +2353,8 @@ html.no-csstransitions .home-content__main {
 
 @media only screen and (max-width: 600px) {
     .s-about {
-        padding-top: 12rem;
+        padding-top: 10rem;
+
     }
     .about-desc {
         font-size: 1.9rem;
@@ -2381,7 +2406,7 @@ html.no-csstransitions .home-content__main {
  *
  * ------------------------------------------------------------------- */
 .s-services {
-    padding-top: 16.2rem;
+    padding-top: 5.2rem;
     padding-bottom: 13.2rem;
     background-color: #FFFFFF;
     color: #757575;
@@ -2511,7 +2536,7 @@ html.no-csstransitions .home-content__main {
 }
 
 .s-works .intro-wrap {
-    padding: 15rem 0 25.2rem;
+    padding: 1rem 0 25.2rem;
     background: #111111;
 }
 
@@ -2755,10 +2780,12 @@ html.no-csstransitions .home-content__main {
     color: #757575;
     position: relative;
     text-align: center;
+    height: 780px;
 }
 .form{
-    padding-top: 2rem;
+    padding-top: 10rem;
     text-align: center;
+    padding-bottom: 10rem;
 
 }
 .form-input{
@@ -2772,6 +2799,10 @@ html.no-csstransitions .home-content__main {
     margin-bottom: 1.8rem;
     /* color: rgba(255, 255, 255, 0.5); */
 
+}
+.s-clients .display-2{
+    text-align:center !important;
+    margin: 50px;
 }
 
 
@@ -3029,7 +3060,7 @@ html.no-csstransitions .home-content__main {
     display: block;
     width: 2px;
     height: 20.4rem;
-    background-color: #39b54a;
+    background-color: white;
     position: absolute;
     left: 50%;
     top: -10.2rem;
@@ -3131,7 +3162,12 @@ html.no-csstransitions .home-content__main {
 .contact-primary #contactForm {
     margin-top: -1.5rem;
 }
-
+.contact-primary h2{
+    margin-top:10px;
+    color: white;
+    font-family: 'montserrat-medium', sans-serif;
+    font-size: 45px;
+}
 .contact-secondary {
     width: 35%;
 }
@@ -3155,7 +3191,16 @@ html.no-csstransitions .home-content__main {
     margin-bottom: 4.8rem;
     color: white !important;
 }
-
+.info-button{
+    background-color: transparent;
+    border: solid 4px;
+    border-color: white;
+}
+.info-button a{
+    text-decoration: none;
+    color: white;
+    font-family: "montserrat-medium";
+}
 .contact-social {
     list-style: none;
     display: inline-block;
