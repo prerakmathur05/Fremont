@@ -20,9 +20,13 @@
 
     <!-- CSS
     ================================================== -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> <!--css for caraousel-->
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/vendor.css">
     <link rel="stylesheet" href="css/main.css">
+    <!-- below two files are for the carousel animation -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <!-- script
     ================================================== -->
@@ -35,66 +39,31 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <!-- for animation -->
     <style>
-        #animation_container, #_preload_div_ {
-          position:absolute;
-          margin:auto;
-          left:0;right:0;
-          top:0;bottom:0;
-        }
-      </style>
-      <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
-      <script src="js/Interaction.js?1650671579926"></script>
-      <script>
-      var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
-      function init() {
-          canvas = document.getElementById("canvas");
-          anim_container = document.getElementById("animation_container");
-          dom_overlay_container = document.getElementById("dom_overlay_container");
-          var comp=AdobeAn.getComposition("C25720BAF2C9490DBEC0B89C9959ADA5");
-          var lib=comp.getLibrary();
-          var loader = new createjs.LoadQueue(false);
-          loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
-          loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
-          var lib=comp.getLibrary();
-          loader.loadManifest(lib.properties.manifest);
-      }
-      function handleFileLoad(evt, comp) {
-          var images=comp.getImages();	
-          if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }	
-      }
-      function handleComplete(evt,comp) {
-          //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
-          var lib=comp.getLibrary();
-          var ss=comp.getSpriteSheet();
-          var queue = evt.target;
-          var ssMetadata = lib.ssMetadata;
-          for(i=0; i<ssMetadata.length; i++) {
-              ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
-          }
-          var preloaderDiv = document.getElementById("_preload_div_");
-          preloaderDiv.style.display = 'none';
-          canvas.style.display = 'block';
-          exportRoot = new lib.Interaction();
-          stage = new lib.Stage(canvas);
-          stage.enableMouseOver();	
-          //Registers the "tick" event listener.
-          fnStartAnimation = function() {
-              stage.addChild(exportRoot);
-              createjs.Ticker.framerate = lib.properties.fps;
-              createjs.Ticker.addEventListener("tick", stage);
-          }	    
-          //Code to support hidpi screens and responsive scaling.
-          AdobeAn.makeResponsive(true,'both',true,1,[canvas,preloaderDiv,anim_container,dom_overlay_container]);	
-          AdobeAn.compositionLoaded(lib.properties.id);
-          fnStartAnimation();
-      }
-      </script>
-      <!-- write your code here -->
-      
+/*            
+        body {
+         background-color:#fff;
+         margin: 0px;
+         height: 100%;
+         overflow: hidden;
+     }*/
+       #lottie0,#lottie1,#lottie2,#lottie3,#lottie4,#lottie5 {
+         background-color:black;
+         width:100%;
+         height:100%;
+         display:block;
+         overflow: hidden;
+         transform: translate3d(0,0,0);
+         text-align: center;
+         opacity: 1;
+         margin-bottom: 0;
+     } 
+ 
 
+ </style>
+    
 </head>
 
-<body onload="init();" id="top">
+<body id="top">
 
     <!-- header
     ================================================== -->
@@ -102,7 +71,7 @@
 
         <div class="header-logo">
             <a class="site-logo" href="index.html">
-                <img src="images/logo.png" alt="Homepage">
+                <img src="images/Logo-white-yellow.png" alt="Homepage">
             </a>
         </div>
 
@@ -115,11 +84,11 @@
                 
                 <ul class="header-nav__list">
                     <li class="current"><a class="smoothscroll"  href="#home" title="home">Home</a></li>
-                    <li><a class="smoothscroll"  href="#about" title="about">About</a></li>
-                    <li><a class="smoothscroll"  href="#services" title="services">Services</a></li>
-                    <li><a class="smoothscroll"  href="#works" title="works">Works</a></li>
-                    <li><a class="smoothscroll"  href="#clients" title="clients">Clients</a></li>
-                    <li><a class="smoothscroll"  href="#contact" title="contact">Contact</a></li>
+                    <li><a class="smoothscroll"  href="#about" title="about">About Us</a></li>
+                    <li><a class="smoothscroll"  href="#services" title="services">Locations</a></li>
+                    <li><a class="smoothscroll"  href="#works" title="works">Assistance</a></li>
+                    <li><a class="smoothscroll"  href="#clients" title="clients">Manufacturing Tool</a></li>
+                    <li><a class="smoothscroll"  href="#contact" title="contact">Academic</a></li>
                 </ul>
     
                 <p>Perspiciatis hic praesentium nesciunt. Et neque a dolorum <a href='#0'>voluptatem</a> porro iusto sequi veritatis libero enim. Iusto id suscipit veritatis neque reprehenderit.</p>
@@ -168,14 +137,86 @@
 
             
 
-                <div  style="margin:0px;">
-                    <div id="animation_container" style="background-color:rgba(50, 50, 50, 0.00); width:1700px; height:600px">
-                        <canvas id="canvas" width="1700" height="600" style="position: absolute; display: none; background-color:rgba(50, 50, 50, 0.00);"></canvas>
-                        <div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1700px; height:600px; position: absolute; left: 0px; top: 0px; display: none;">
-                        </div>
+            <div id="myCarousel" class="carousel slides" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                  <li data-target="#myCarousel" data-slide-to="1"></li>
+                  <li data-target="#myCarousel" data-slide-to="2"></li>
+                  <li data-target="#myCarousel" data-slide-to="3"></li>
+                  <li data-target="#myCarousel" data-slide-to="4"></li>
+                  <li data-target="#myCarousel" data-slide-to="5"></li>
+                
+                </ol>
+              
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                  <div class="item active">
+               
+                    <script src="js/index01.js"></script>
+                    <!-- endbuild -->
+                    
+                    <div id="lottie0"></div>
+                    <script src="js/index02.js"></script>
+                       
+                  </div>
+              
+                  <div class="item">
+                    <script src="js/index11.js"></script>
+                    <!-- endbuild -->
+                    
+                    <div id="lottie1">
+
                     </div>
-                    <div id='_preload_div_' style='position:absolute; top:0; left:0; display: inline-block; height:600px; width: 1700px; text-align: center;'>	<span style='display: inline-block; height: 100%; vertical-align: middle;'></span>	<img src=images/_preloader.gif?1650671579927 style='vertical-align: middle; max-height: 100%'/></div>
-                </div>
+                    <script src="js/index12.js"></script>
+                  </div>
+              
+              
+                  <div class="item">
+                    <script src="js/index21.js"></script>
+                    <!-- endbuild -->
+                    
+                    <div id="lottie2"></div>
+                    <script src="js/index22.js"></script>
+                  </div>
+                 
+                  <div class="item">
+                    <script src="js/index31.js"></script>
+                    <!-- endbuild -->
+                    
+                    <div id="lottie3"></div>
+                    <script src="js/index32.js"></script>
+                  </div>
+                  <div class="item">
+                    <script src="js/index41.js"></script>
+                    <!-- endbuild -->
+                    
+                    <div id="lottie4"></div>
+                    <script src="js/index42.js"></script>
+                  </div>
+                  <div class="item">
+                    <script src="js/index51.js"></script>
+                    <!-- endbuild -->
+                    
+                    <div id="lottie5"></div>
+                    <script src="js/index52.js"></script>
+                  </div>
+                 
+                 
+              
+                <!-- Left and right controls -->
+                  <!-- <a class="left carousel-control" href=" #myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                  </a> -->
+              </div>
+                
+              </div>
+              
                 
 
             
