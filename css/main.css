@@ -420,7 +420,7 @@ img.pull-left {
 .map{
     height: 100vh;
     width: 80vw;
-    background-color: white;
+    /* background-color: white; */
     border: none;
     margin-left: 5px;
 
@@ -1233,8 +1233,8 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 }
 
 .display-2 {
-    font-family: "montserrat-bold", sans-serif;
-    font-size: 70px;
+    font-family: "montserrat-medium", sans-serif;
+    font-size: 72px;
     line-height: 1.255;
     color: #000000;
     margin-top: 0;
@@ -1256,7 +1256,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     letter-spacing: .25rem;
     color: #259cf4;
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 10px;
 }
 
 .subhead--dark {
@@ -1267,7 +1267,14 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 }
 .col-full p{
     font-family: "montserrat", sans-serif;
-    font-size: 45px;
+    font-size: 30px;
+}
+.subtitle{
+    font-family: "montserrat-bold", sans-serif;
+    font-size: 30px;
+    color: white;
+    margin-top: 5px;
+
 }
 
 /* ------------------------------------------------------------------- 
@@ -1492,7 +1499,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     padding: 0;
     outline: 0;
     border: none;
-    width: 220px;
+    width: 300px;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
@@ -1758,6 +1765,9 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     .header-logo {
         left: 30px;
     }
+    .header-logo a{
+        width: 200px;
+    }
     .header-menu-toggle {
         right: 25px;
     }
@@ -1823,6 +1833,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     /* padding-bottom: 15.6rem; */
     position: relative;
     overflow: hidden;
+    /* background-color: #259CF4; */
 }
 
 .home-content h3 {
@@ -1894,8 +1905,8 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 }
 
 .home-content__scroll a::before {
-    border-bottom: 2px solid #39b54a;
-    border-right: 2px solid #39b54a;
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
     content: '';
     display: block;
     height: 8px;
@@ -1919,7 +1930,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     display: block;
     width: 2px;
     height: 10.2rem;
-    background-color: #39b54a;
+    background-color: white;
     position: absolute;
     right: 7.2rem;
     bottom: 0;
@@ -2106,6 +2117,7 @@ html.no-csstransitions .home-content__main {
 }
 
 @media only screen and (max-width: 1000px) {
+    
     .home-content h1 {
         font-size: 4.6rem;
     }
@@ -2184,6 +2196,7 @@ html.no-csstransitions .home-content__main {
 @media only screen and (max-width: 500px) {
     .s-home {
         min-height: 642px;
+
     }
     .home-content h1 {
         font-size: 3.5rem;
@@ -2216,6 +2229,8 @@ html.no-csstransitions .home-content__main {
 @media only screen and (max-width: 400px) {
     .s-home {
         min-height: 630px;
+
+
     }
     .home-content h1 {
         font-size: 3.2rem;
@@ -2529,7 +2544,7 @@ html.no-csstransitions .home-content__main {
  *
  * ------------------------------------------------------------------- */
 .s-works {
-    background: #FFFFFF;
+    background: black;
     padding: 0 0 15rem 0;
     min-height: 800px;
     position: relative;
@@ -2537,7 +2552,7 @@ html.no-csstransitions .home-content__main {
 
 .s-works .intro-wrap {
     padding: 1rem 0 25.2rem;
-    background: #111111;
+    background: black;
 }
 
 .works-content {
@@ -3195,6 +3210,7 @@ html.no-csstransitions .home-content__main {
     background-color: transparent;
     border: solid 4px;
     border-color: white;
+    color: white;
 }
 .info-button a{
     text-decoration: none;
@@ -3471,10 +3487,10 @@ footer .row {
     padding: 0;
     outline: 0;
     border: none;
-    width: 200px;
+    width: 300px;
     height: 40px;
-    background: url("../images/footer.jpg") no-repeat center;
-    background-size: 200px 40px;
+    background: url("../images/Logo-white-blue.png") no-repeat center;
+    background-size: 270px 40px;
     font: 0/0 a;
     text-shadow: none;
     color: transparent;
