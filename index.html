@@ -54,7 +54,16 @@
          height: 100%;
          overflow: hidden;
      }*/
-       #lottie0,#lottie1,#lottie2,#lottie3,#lottie4,#lottie5 {
+       #lottie {
+         background-color:#259CF4;
+            width:100%;
+            height:100%;
+            display:block;
+            overflow: hidden;
+            transform: translate3d(0,0,0);
+            text-align: center;
+            opacity: 1; 
+/* 
          background-color:black;
          width:100%;
          height:100%;
@@ -63,7 +72,7 @@
          transform: translate3d(0,0,0);
          text-align: center;
          opacity: 1;
-         margin-bottom: 0;
+         margin-bottom: 0; */
      } 
  
 
@@ -96,7 +105,7 @@
                     <li><a class="smoothscroll"  href="#works" title="services">Locations</a></li>
                     <li><a class="smoothscroll"  href="#services" title="works">Assistance</a></li>
                     <li><a class="smoothscroll"  href="#clients" title="clients">Manufacturing Tool</a></li>
-                    <li><a class="smoothscroll"  href="#contact" title="contact">Academic</a></li>
+                    <li><a class="smoothscroll"  href="#contact" title="contact">Talent Pipeline</a></li>
                 </ul>
     
                 <p>Perspiciatis hic praesentium nesciunt. Et neque a dolorum <a href='#0'>voluptatem</a> porro iusto sequi veritatis libero enim. Iusto id suscipit veritatis neque reprehenderit.</p>
@@ -132,60 +141,30 @@
 
 
     <!-- home
-    ================================================== -->
+    ==================================data-natural-width=3000 data-natural-height=2000================ -->
 
     
-    <section id="home" class="s-home target-section" data-parallax="scroll"  data-natural-width=3000 data-natural-height=2000 data-position-y=center>
+    <section id="home" class="s-home target-section" data-parallax="scroll"  data-natural-width=3000 data-natural-height=1000 data-position-y=center>
       
         
         <div class="overlay"></div>
         <div class="shadow-overlay"></div>
 
         <div class="home-content">
+            <div class="my-animation">
 
+
+            <!-- build:scripto --><script src="js/home_animation1.js"></script><!-- endbuild -->
+
+
+        <div id="lottie"></div>
+
+        <script src="js/home_animation2.js ">
             
-            <!-- <div id="myCarousel" class="carousel slides" data-ride="carousel"> -->
-                <div class="container">
-                    <div class="timer"></div>
-                    <div class="slideshow">
-                        <div class="slide">
-                            <script src = "js/index01.js"></script>
-                            <div id="lottie0">
-                                <script src ="js/index02.js"></script>
-                            </div>
-                        </div>
-                        <div class="slide">
-                            <script src = "js/index11.js"></script>
-                            <div id="lottie1">
-                                <script src ="js/index12.js"></script>
-                            </div>
-                        </div>
-                        <div class="slide">
-                            <script src = "js/index21.js"></script>
-                            <div id="lottie2">
-                                <script src ="js/index22.js"></script>
-                            </div>
-                        </div>
-                        <div class="slide">
-                            <script src = "js/index31.js"></script>
-                            <div id="lottie3">
-                                <script src ="js/index32.js"></script>
-                            </div>
-                        </div>
-                        <div class="slide">
-                            <script src = "js/inde41.js"></script>
-                            <div id="lottie4">
-                                <script src ="js/index42.js"></script>
-                            </div>
-                        </div>
-                        <div class="slide">
-                            <script src = "js/index51.js"></script>
-                            <div id="lottie5">
-                                <script src ="js/index52.js"></script>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        </script>
+            </div>
+            
+           
                       
            
 
@@ -242,9 +221,13 @@
             <div class="col-full">
 
                 <p>
-                    We are the Fremont Institute for Manufacturing
-                    and we provide tools and services to help startups
-                    and companies grow expand and scale.                </p>
+                    <span>
+
+                        We are the Fremont Institute for Manufacturing
+                        and we provide tools and services to help startups
+                        and companies grow expand and scale.                
+                    </span>
+                </p>
             </div>
         </div> <!-- end about-desc -->
 
@@ -292,19 +275,27 @@
         </div> <!-- end intro-wrap -->
 <!--Map -->
 
-        <div class="row works-content">
+        <div class="row works-content" data-aos="fade-up">
+            <div class="map">
+            <iframe  class ="map__element" src="http://www.greenvisions.net/maps/ca_biomedical_2020/map.php"></iframe>
+<!-- 
             <div class="col-full masonry-wrap">
-                <div class="masonry">
+                 <div class="masonry"> 
     
                     <div class="masonry__brick" data-aos="fade-up">
                         <div class="item-folio">
+                            <div class="map">
 
-                            <iframe class = "map" src="http://www.greenvisions.net/maps/ca_biomedical_2020/map.php"></iframe>
+                           
+
+                          <iframe  class ="map__element" src="http://www.greenvisions.net/maps/ca_biomedical_2020/map.php"></iframe>
+
                             <div class="item-folio__thumb">
                                    
                                 <a href="images/portfolio/gallery/g-shutterbug.jpg" class="thumb-link" title="Shutterbug" data-size="1050x700">
                                    
                                 </a> 
+                            </div>
                             </div>
     
                             <div class="item-folio__text">
@@ -325,8 +316,9 @@
                             </div>
     
                         </div>
-                    </div> <!-- end masonry__brick -->
-
+                    </div>  end masonry__brick 
+                </div> -->
+            </div>
                   
         </div> <!-- end works-content -->
 
@@ -446,22 +438,140 @@
     <!-- clients
     ================================================== -->
     <section id = "clients" class="s-clients"> 
+        <div class="s-clients2">
+
+
+        
         <h3 class="subhead">MANUFACTURING LOCATION TOOL</h3>
         <p class="display-2">  Try this tool! </p>
            <h2 class="'subtitle"> 
             This tool will help you assess the optimal value chain of your activity based on locations.
  
            </h2>
-    <div class="form">
-        <form id="mc-form"  novalidate="true">
-        <input type="string"  name="cost" class="form-input"  placeholder="Unit Price" required="" />
-        <input type="string"  name="cost" class="form-input"  placeholder="Material cost (BOM) " required="" />
-        <input type="string"  name="cost" class="form-input"  placeholder="Labor Hrs. (Assembly)" required="" />
-        <input type="string"  name="cost" class="form-input"  placeholder="Unit Weight " required="" />
-        <input type="string"  name="cost" class="form-input"  placeholder="Units per year" required="" />
-        <input type="submit" name="subscribe" value="Calculate"  />
+    <!-- <div class="form"> -->
+    </div>
+    <div class="form__parent">
+        <div class="form__child">
+            <h3 class="subhead form__subhead">PLEASE FILL IN WITH YOUR INPUTS</h3>
+
+        <!-- <form id="mc-form"  novalidate="true"> -->
+        
+ <form id ="mc-forms" novalidate="true" onsubmit="execute()">
+ <table>
+
+
+<tr>
+
+
+    <div class="table__row">
+        <label class="td1" for="mCost">UNIT PRICE <br>
+            IN USD
+        
+        </label>
+        
+        <input class = "td2" type="string"  id ="mCost" name="cost" class="form-input"   required="" />
+        
+        </div>
+</tr>
+<tr>
+
+
+    <div class="table__row">
+        <label class="td1" for="mCost">MATERIAL COST <br>
+            (BOM) IN USD 
+            
+        
+        </label>
+        
+        <input class = "td2" type="string"  id ="mCost" name="cost" class="form-input"   required="" />
+        
+        </div>
+</tr>
+ <tr>
+
+
+     <div class="table__row">
+         <label class="td1" for="mCost">DIRECT LABOR <br> HOURS
+         
+         </label>
+         
+         <input class = "td2" type="string"  id ="mCost" name="cost" class="form-input"   required="" />
+         
+         </div>
+ </tr>
+ <tr>
+
+
+     <div class="table__row">
+         <label class="td1" for="mCost">UNIT WEIGHT <br>
+             IN LBS
+         
+         </label>
+         
+         <input class = "td2" type="string"  id ="mCost" name="cost" class="form-input"   required="" />
+         
+         </div>
+ </tr>
+<tr>
+
+
+    <div class="table__row">
+        <label class="td1" for="mCost">UNITS PER YEAR
+            
+        </label>
+        
+        <input class = "td2" type="string"  id ="mCost" name="cost" class="form-input"   required="" />
+        
+    </div>
+</tr>
+                    </table>
+    
+<!-- 
+<table>
+<tr>
+    <td><label for="Material Cost"></label></td>
+    <td> 
+    <input type="string"  name="cost" class="form-input"   required="" />
+    </td>
+    </tr>
+    <tr>
+        <td><label for="Labor Hrs. (Assembly)"></label></td>
+        <td> 
+        <input type="string"  name="cost" class="form-input"   required="" />
+        </td>
+        </tr>
+        <tr>
+            <td><label for="Unit Weight"></label></td>
+            <td> 
+            <input type="string"  name="cost" class="form-input"   required="" />
+            </td>
+            </tr>
+            <tr>
+                <td><label for="Units per year"></label></td>
+                <td> 
+                <input type="string"  name="cost" class="form-input"   required="" />
+                </td>
+                </tr>
+            </table> -->
+            
+        <input type="submit" name="subscribe"  onclick="myFunction()"   value="Calculate"  />
             <label for="mc-email" class="subscribe-message"></label>
         </form>
+   
+   <script>
+        function myFunction(){
+//here we will execute the check of inputs and then show table using the table things
+
+        }
+        function execute(){
+            alert(":sbh")
+        }
+    var form = document.getElementById("mc-forms");
+    function handleForm(event) { event.preventDefault(); } 
+    form.addEventListener('submit', handleForm);
+   </script>
+    </div>
+
     </div>
 </section>
    

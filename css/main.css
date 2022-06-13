@@ -416,14 +416,36 @@ img.pull-left {
     margin: 1.5rem 3rem 0 0;
 }
 
+
 .map{
-    height: 100vh;
-    width: 80vw;
+    /* margin-right: 20px; */
+    /* width: 100%; */
+    display: flex;
+    justify-content: center;
+    overflow:hidden;
+    /* position: relative; */
+    text-align: left;
     /* background-color: white; */
     border: none;
-    margin-left: 5px;
+    /* margin-left: 5px; */
+    /* margin:20px 0 20px 0 !important; */
 
 
+}
+.map__element{
+    height: 100vh;
+    margin:20px 0 20px 0 !important;
+
+    width: 80vw;
+    /* text-align: center; */
+
+}
+@media only screen and (max-width:900px){
+   
+    .item-folio{
+        text-align: center !important;
+        /* margin-left: -15px !important; */
+    }
 }
 /* ------------------------------------------------------------------- 
  * ## tables
@@ -509,7 +531,7 @@ form,
 }
 
 .pace .pace-progress {
-    background: #39b54a;
+    background: white; /*preloader bar*/
     position: fixed;
     z-index: 900;
     top: 0;
@@ -803,15 +825,15 @@ input[type="button"] {
     line-height: calc(5.4rem - .4rem);
     padding: 0 3rem;
     margin: 0 .3rem 1.2rem 0;
-    color: #000000;
+    color: white;
     text-decoration: none;
     text-align: center;
     white-space: nowrap;
     cursor: pointer;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
-    background-color: #c5c5c5;
-    border: .2rem solid #c5c5c5;
+    background-color: #259CF4;
+    border: .2rem solid #259CF4;
 }
 
 .btn:hover,
@@ -1261,10 +1283,14 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 .subhead--dark {
     color: #259cf4;
 }
+
 .col-full h1{
     display: inline;
 }
 .col-full p{
+    display: inline-block;
+    text-align: center;
+    width: 70%;
     font-family: "montserrat", sans-serif;
     font-size: 30px;
 }
@@ -1829,11 +1855,11 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 
     width: 100%;
     height: 100%;
-    /* vertical-align: middle; */
-    /* padding-bottom: 15.6rem; */
+    vertical-align: middle;
+    padding-bottom: 15.6rem;
     position: relative;
     overflow: hidden;
-    /* background-color: #259CF4; */
+    background-color: #259CF4;
 }
 
 .home-content h3 {
@@ -1935,6 +1961,21 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     position: absolute;
     right: 7.2rem;
     bottom: 0;
+}
+.my-animation{
+    padding-top:20px ;
+}
+@media only screen and (max-width: 900px) {
+    .home-content{
+        height:50% !important;
+    }
+    .my-animation {
+        height: 100% !important;
+        width: 100%;
+        padding-top: 40px;
+
+    }
+    
 }
 
 
@@ -2560,7 +2601,9 @@ html.no-csstransitions .home-content__main {
 }
 
 .works-content {
-    max-width: 1160px;
+    /* max-width: 1160px; */
+    width: 100%;
+
     margin-top: -23.4rem;
 }
 
@@ -2584,6 +2627,7 @@ html.no-csstransitions .home-content__main {
 } */
 
 .item-folio {
+
     position: relative;
     overflow: hidden;
     text-align: center; /*changed*/
@@ -2795,17 +2839,55 @@ html.no-csstransitions .home-content__main {
 .s-clients {
     padding-top: 6.2rem;
     padding-bottom: 6.8rem;
-    background-color: #e6e6e6;
+    /* background-color: #e6e6e6; */
+    background-color: white;
     color: #757575;
     position: relative;
     text-align: center;
-    height: 780px;
+    /* height: 780px; */
 }
-.form{
-    padding-top: 10rem;
-    text-align: center;
+.s-clients2{
+    padding: 1rem 0 25.2rem;
+
+background-color:#e6e6e6 ;
+}
+.form__parent{
+    display: flex;
+    justify-content: center;
+    margin-top: -150px;
+
+}
+.form__child{
+    width: 50%;
+    background-color: white;
+    border: 5px #0087cc solid;
+    
+    /* padding-top: 10rem; */
+    text-align: center !important;
     padding-bottom: 10rem;
 
+}
+.form__subhead{
+margin-top:40px;
+margin-bottom: 20px;
+}
+.table__row{
+    display: flex;
+    justify-content: center;
+}
+.td1{
+/* margin-left: 50px;
+margin-right: 20px; 
+align-items: right; */
+width: 20%;
+text-align: right;
+margin-right: 20px;
+}
+.td2{
+    background-color: #e6e6e6;
+    width: 50%;
+    height: 50px;
+    margin-right: 20px;
 }
 .form-input{
     width: 30vw;
