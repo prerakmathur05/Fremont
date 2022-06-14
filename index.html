@@ -456,7 +456,7 @@
 
         <!-- <form id="mc-form"  novalidate="true"> -->
         
- <form id ="mc-forms" novalidate="true" onsubmit="execute()">
+ <form  id ="mc-forms" novalidate="true" >
  <table>
 
 
@@ -464,12 +464,12 @@
 
 
     <div class="table__row">
-        <label class="td1" for="mCost">UNIT PRICE <br>
+        <label class="td1"  for="mCost">UNIT PRICE <br>
             IN USD
         
         </label>
         
-        <input class = "td2" type="string"  id ="mCost" name="cost" class="form-input"   required="" />
+        <input class = "td2" name = "unitPrice" type="string"  id ="unitPrice" class="form-input"   required="" />
         
         </div>
 </tr>
@@ -477,13 +477,13 @@
 
 
     <div class="table__row">
-        <label class="td1" for="mCost">MATERIAL COST <br>
+        <label class="td1" for="mCost"> MATERIAL COST <br>
             (BOM) IN USD 
             
         
         </label>
         
-        <input class = "td2" type="string"  id ="mCost" name="cost" class="form-input"   required="" />
+        <input class = "td2" name = "materialCost" type="string"  id ="materialCost" class="form-input"   required="" />
         
         </div>
 </tr>
@@ -495,7 +495,7 @@
          
          </label>
          
-         <input class = "td2" type="string"  id ="mCost" name="cost" class="form-input"   required="" />
+         <input class = "td2" name = "directLabor" type="string"  id ="directLabor" name="cost" class="form-input"   required="" />
          
          </div>
  </tr>
@@ -508,7 +508,7 @@
          
          </label>
          
-         <input class = "td2" type="string"  id ="mCost" name="cost" class="form-input"   required="" />
+         <input class = "td2" name = "unitWeight" type="string"  id ="unitWeight" name="cost" class="form-input"   required="" />
          
          </div>
  </tr>
@@ -520,7 +520,7 @@
             
         </label>
         
-        <input class = "td2" type="string"  id ="mCost" name="cost" class="form-input"   required="" />
+        <input class = "td2" name = "unitPerYear" type="string"  id ="unitPerYear"  class="form-input"   required="" />
         
     </div>
 </tr>
@@ -554,27 +554,66 @@
                 </tr>
             </table> -->
             
-        <input type="submit" name="subscribe"  onclick="myFunction()"   value="Calculate"  />
-            <label for="mc-email" class="subscribe-message"></label>
+        <input type="submit" name="subscribe"  id = "submit" value="calculate"  />
+        
+        <label for="mc-email" class="subscribe-message"></label>
         </form>
-   
-   <script>
-        function myFunction(){
-//here we will execute the check of inputs and then show table using the table things
-
-        }
-        function execute(){
-            alert(":sbh")
-        }
-    var form = document.getElementById("mc-forms");
-    function handleForm(event) { event.preventDefault(); } 
-    form.addEventListener('submit', handleForm);
-   </script>
+         <div id="displaytable" style="visibility: hidden">
+            <p style = "color:black">osvdsbmdsmdmsdsd ns ms ksdsdnsjldhsldnlkkkk</p>
+            <table id="displaytable" style="display: none; width: 100%" cellpadding="1" cellspacing="0" border="3">
+              <tr >
+                <td class="lbl">column1</td>
+                <td class="lbl">column2</td>
+                <td class="lbl">column3</td>
+              </tr>
+              <tr>
+                <td >1</td>
+                <td >2</td>
+                <td >33</td>
+              </tr>
+              <tr>
+                <td >4</td>
+                <td >5</td>
+                <td >6</td>
+              </tr>
+            </table> 
+          </div>
     </div>
 
+   
     </div>
 </section>
-   
+<script>
+const form = document.getElementById("mc-forms");
+
+
+const unitPrice = document.getElementById("unitPrice");
+const unitWeight=document.getElementById("unitWeight").value;
+const materialCost = document.getElementById("materialCost").value;
+const unitPerYear = document.getElementById("unitPerYear").value;
+const directLabor = document.getElementById("directLabor").value;
+
+document.querySelector('#submit').addEventListener('click', event =>{
+    event.preventDefault();
+    checkInputs();
+
+})
+//here we will execute the check of inputs and then show table using the table things
+function checkInputs(){
+
+    // e.preventDefault();
+    alert(unitPrice.value)
+if (document.getElementById("displaytable").style.display === "none")
+     document.getElementById("displaytable").style.display="block";
+ else
+     document.getElementById("displaytable").style.display="none";
+     }
+    
+ // var formReload = document.getElementById("mc-forms");
+ // function handleForm(event) { event.preventDefault(); } 
+ // formReload.addEventListener('submit', handleForm);
+</script>
+
 
     <!-- contact
     ================================================== -->
