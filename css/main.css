@@ -835,7 +835,7 @@ input[type="button"] {
     background-color: #259CF4;
     border: .2rem solid #259CF4;
 }
-
+/* #b8b8b8 */
 .btn:hover,
 button:hover,
 input[type="submit"]:hover,
@@ -846,9 +846,9 @@ button:focus,
 input[type="submit"]:focus,
 input[type="reset"]:focus,
 input[type="button"]:focus {
-    background-color: #b8b8b8;
-    border-color: #b8b8b8;
-    color: #000000;
+    background-color:white;
+    border-color:#259CF4;
+    color: #259CF4;
     outline: 0;
 }
 
@@ -1301,7 +1301,11 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     margin-top: 5px;
 
 }
-
+.s-clients h2{
+    width: 50%;
+    display: inline-block;
+    text-align: center;
+}
 /* ------------------------------------------------------------------- 
  * responsive:
  * display headings
@@ -2293,7 +2297,7 @@ html.no-csstransitions .home-content__main {
  *
  * ------------------------------------------------------------------- */
 .s-about {
-    padding-top: 16.2rem;
+    padding-top: 13.2rem;
     padding-bottom: 9rem;
     background-color: black;
     color: #010507;
@@ -2313,7 +2317,10 @@ html.no-csstransitions .home-content__main {
     max-width: 1024px;
 }
 
-
+.image{
+    padding: 20px 20px;
+    margin-top: 20px;
+}
 /* ----------------------------------s--------------------------------- 
  * ## about stats
  * ------------------------------------------------------------------- */
@@ -2847,7 +2854,7 @@ html.no-csstransitions .home-content__main {
     /* height: 780px; */
 }
 .s-clients2{
-    padding: 1rem 0 25.2rem;
+    padding: 5rem 0 25.2rem;
 
 background-color:#e6e6e6 ;
 }
@@ -2903,7 +2910,7 @@ margin-right: 20px;
 }
 .s-clients .display-2{
     text-align:center !important;
-    margin: 50px;
+    margin: 20px;
 }
 
 
@@ -3611,10 +3618,10 @@ footer .row {
     padding: 0;
     outline: 0;
     border: none;
-    width: 300px;
-    height: 40px;
+    width: 270px;
+    height: 30px;
     background: url("../images/Logo-white-blue.png") no-repeat center;
-    background-size: 270px 40px;
+    background-size: 270px 30px;
     font: 0/0 a;
     text-shadow: none;
     color: transparent;
@@ -3631,6 +3638,24 @@ footer .row {
 .footer-subscribe #mc-form {
     width: 100%;
 }
+
+#mc-forms p{
+    margin-top: 10px;
+    font-family: "montserrat-bold", sans-serif;
+    font-size: 1.0rem;
+    text-align: center;
+    /* line-height: 1.333; */
+    text-transform: uppercase;
+    /* letter-spacing: .25rem; */
+    color: #259cf4;
+    }
+
+
+    @media only screen and (max-width:930px){
+        label{
+            font-size: 1.0rem;
+        }
+    }
 
 .footer-subscribe #mc-form input[type="email"] {
     width: 100%;

@@ -1,3 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+* {
+    margin: 0;
+    box-sizing: border-box;
+    --webkit-font-smoothing: antialiased;
+}
+
+
+#the__table{
+    margin: 0 !important;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.modal__wrapper{
+    position: fixed;
+    left:0;
+    top:0;
+    background: rgba(0, 0, 0, 0.6);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .3s ease-in-out;
+}
+
+.modal__container {
+    background:#e6e6e6;
+    width: 1200px !important;
+    /* max-width: 150%; */
+    padding: 20px;
+    border-radius: 4px;
+    position: relative;
+    transform: translateY(-100%);
+    transition: all .3s ease-in-out;
+	overflow: scroll;
+}
+
+.close{
+	color: #259CF4;
+	/* position: relative; */
+}
+.action {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.modal__container button.close {
+    position: absolute;
+    right: 5px;
+    top: 5px; 
+	margin-bottom: 20px;
+    font-size: 28px;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+}
+
+@media only screen and (max-width:770px){
+	.close{
+
+		position: relative !important;
+		top:7px;
+	}
+}
+.modal__container button.close:hover {
+    color: black;
+}
+.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+.modal__wrapper.active .modal__container{
+    transform: translateY(0px);
+}
+
+
+
+
+
+
+
+
+
+/* Below is the CSS code just for the table */
+
 tr
 	{mso-height-source:auto;}
 col
