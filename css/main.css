@@ -435,7 +435,7 @@ img.pull-left {
 .map__element{
     height: 100vh;
     margin:20px 0 20px 0 !important;
-
+    background-color: whitesmoke;
     width: 80vw;
     /* text-align: center; */
 
@@ -2603,7 +2603,7 @@ html.no-csstransitions .home-content__main {
 }
 
 .s-works .intro-wrap {
-    padding: 1rem 0 25.2rem;
+    padding: 3rem 0 25.2rem;
     background: black;
 }
 
@@ -2844,7 +2844,7 @@ html.no-csstransitions .home-content__main {
  *
  * ------------------------------------------------------------------- */
 .s-clients {
-    padding-top: 6.2rem;
+    padding-top: 1.2rem;
     padding-bottom: 6.8rem;
     /* background-color: #e6e6e6; */
     background-color: white;
