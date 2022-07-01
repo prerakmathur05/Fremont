@@ -1295,13 +1295,15 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     font-size: 30px;
 }
 .subtitle{
-    font-family: "montserrat-bold", sans-serif;
+    font-family: "montserrat-medium", sans-serif;
     font-size: 30px;
     color: white;
     margin-top: 5px;
 
 }
+
 .s-clients h2{
+    margin-top: 2rem;
     width: 50%;
     display: inline-block;
     text-align: center;
@@ -2854,7 +2856,7 @@ html.no-csstransitions .home-content__main {
     /* height: 780px; */
 }
 .s-clients2{
-    padding: 5rem 0 25.2rem;
+    padding: 5rem 0 22.2rem;
 
 background-color:#e6e6e6 ;
 }
@@ -2892,12 +2894,13 @@ margin-right: 20px;
 }
 .td2{
     background-color: #e6e6e6;
-    width: 50%;
+    width: 42%;
     height: 50px;
     margin-right: 20px;
+    padding-left: 20px;
 }
 .form-input{
-    width: 30vw;
+    width: 20vw;
     height: 5.4rem;
     margin-right: 20px;
     padding: 1.2rem 160px 1.2rem 60px;
