@@ -24,6 +24,8 @@
     justify-content: center;
     opacity: 0;
     pointer-events: none;
+
+
     transition: all .3s ease-in-out;
 }
 
@@ -36,7 +38,7 @@
     position: relative;
     transform: translateY(-100%);
     transition: all .3s ease-in-out;
-	overflow: scroll;
+	overflow: auto;
 }
 
 .close{
@@ -52,23 +54,30 @@
 .modal__container button.close {
     position: absolute;
     right: 5px;
-    top: 5px; 
+    top: -11px; 
 	margin-bottom: 20px;
     font-size: 28px;
     background: none;
     border: none;
     outline: none;
     cursor: pointer;
+}
+.modal_container_child{
+	width: 1160px;
+	/* background-color: red; */
 
 }
-
+.modal_container_child h3{
+	position: relative;
+}
+/* 
 @media only screen and (max-width:770px){
 	.close{
 
 		position: relative !important;
 		top:7px;
 	}
-}
+} */
 .modal__container button.close:hover {
     color: black;
 }

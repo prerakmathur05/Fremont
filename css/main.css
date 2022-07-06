@@ -2876,6 +2876,11 @@ background-color:#e6e6e6 ;
     padding-bottom: 10rem;
 
 }
+@media only screen and  (max-width:900px){
+.form__child{
+    width:75%;
+}
+}
 .form__subhead{
 margin-top:40px;
 margin-bottom: 20px;
@@ -3522,6 +3527,12 @@ margin-right: 20px;
     .contact-primary #contactForm {
         margin-top: -1.5rem;
         margin-bottom: 7.2rem;
+    }
+    .contact-primary h2{
+        font-size: 25px;
+    }
+    .contact-secondary h2{
+        font-size: 25px;
     }
     .contact-secondary .hide-on-fullwidth {
         display: none;

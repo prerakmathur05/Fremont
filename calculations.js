@@ -127,16 +127,12 @@ function calculate(){
 
 //below are 5 inputs to be taken from user
 const productPrice=document.getElementById("unitPrice").value; //this is kept fixed 
-const unitPrice = 0;
+const unitPrice = None;
 const unitWeight= document.getElementById("unitWeight").value;
 const materialCost = document.getElementById("materialCost").value;
 const unitPerYear = document.getElementById("unitPerYear").value;
 const directLabor = document.getElementById("directLabor").value;
 
-var productCost= document.getElementsByName("productPrice")
-for (var i=0;i<productCost.length;i++){
-  productCost[i].innerHTML="$" + productPrice
-}
 var unitCost= document.getElementsByName("unitCost")
 for (var i=0;i<unitCost.length;i++){
   unitCost[i].innerHTML="$" + unitPrice
@@ -152,24 +148,21 @@ for (var i=0;i<directLaborName.length;i++){
 
 
 const materialOverhead= materialCost*0.03
+var materials= document.getElementsByName("materialOverhead")
 
-document.getElementById("materialOverheadCACA").innerHTML= "$" + materialOverhead
-document.getElementById("materialOverheadCHCA").innerHTML= "$" + materialOverhead
-document.getElementById("materialOverheadCACH").innerHTML= "$" + materialOverhead
-document.getElementById("materialOverheadCHCH").innerHTML= "$" + materialOverhead
-document.getElementById("materialOverheadMECA").innerHTML= "$" + materialOverhead
-
-
+for(var i =0; i<materials.length;i++){
+  materials[i].innerHTML="$" + materialOverhead.toFixed(2)
+}
 var unitsPerYearName= document.getElementsByName("unitsPerYear")
 for(var i= 0; i<unitsPerYearName.length;i++){
   unitsPerYearName[i].innerHTML="$" + unitPerYear
 }
 //labor charges
-const lcCACA= (30*directLabor).toFixed(2)
+const lcCACA= (50*directLabor).toFixed(2)
 const lcCHCA= (10*directLabor).toFixed(2)
-const lcCACH= (30*directLabor).toFixed(2)
+const lcCACH= (50*directLabor).toFixed(2)
 const lcCHCH= (10*directLabor).toFixed(2)
-const lcMECA= (15*directLabor).toFixed(2)
+const lcMECA= (20*directLabor).toFixed(2)
 
 document.getElementById("lcCACA").innerHTML= "$" + lcCACA
 document.getElementById("lcCHCA").innerHTML= "$" + lcCHCA
@@ -208,15 +201,6 @@ document.getElementById("customFeesCHCA").innerHTML= "$" + customFeesCHCA
 document.getElementById("customFeesCACH").innerHTML= "$" + customFeesCACH
 document.getElementById("customFeesCHCH").innerHTML= "$" + customFeesCHCH
 document.getElementById("customFeesMECA").innerHTML= "$" + customFeesMECA
-
-
-//unit weight
-var weightArray = document.getElementsByName('unitWeight')
-for(var i=0;i<weightArray.length;i++){
-weightArray[i].innerHTML=unitWeight;
-}
-
-
 
 //Ocean Freight Cost
 const ofcCHCA = (unitWeight*24).toFixed(2)
@@ -265,9 +249,9 @@ Bill of Lading
 Documentation fee and other additional costs
 Pallet/Crating cost
 Labor for packing */
-const shippingCostConstantFactorCACA = 345
+const shippingCostConstantFactorCACA = 365
 const shippingCostConstantFactorCHCA = 815
-const shippingCostConstantFactorCACH = 795
+const shippingCostConstantFactorCACH = 815
 const shippingCostConstantFactorCHCH = 335
 const shippingCostConstantFactorMECA = 790
 
@@ -310,43 +294,6 @@ document.getElementById("cpst5yCHCA").innerHTML= "$" + (eval(wiCACA) + eval(cumu
 document.getElementById("cpst5yCACH").innerHTML= "$" + (eval(wiCACA) + eval(cumulativeProductCACH)).toFixed(2)
 document.getElementById("cpst5yCHCH").innerHTML= "$" + (eval(wiCACA) + eval(cumulativeProductCHCH)).toFixed(2)
 document.getElementById("cpst5yMECA").innerHTML= "$" + (eval(wiCACA) + eval(cumulativeProductMECA)).toFixed(2)
-
-//Tooling Cost
-const toolingCostCACA = 20000
-const toolingCostCHCA = 5000
-const toolingCostCACH = 20000
-const toolingCostCHCH = 5000
-const toolingCostMECA = 5000
-document.getElementById("toolingCostCACA").innerHTML= "$" + (toolingCostCACA).toFixed(2)
-document.getElementById("toolingCostCHCA").innerHTML= "$" + (toolingCostCHCA).toFixed(2)
-document.getElementById("toolingCostCACH").innerHTML= "$" + (toolingCostCACH).toFixed(2)
-document.getElementById("toolingCostCHCH").innerHTML= "$" + (toolingCostCHCH).toFixed(2)
-document.getElementById("toolingCostMECA").innerHTML= "$" + (toolingCostMECA).toFixed(2)
-
-document.getElementById("toolingCostPUCACA").innerHTML= "$" + (toolingCostCACA/unitPerYear).toFixed(2)
-document.getElementById("toolingCostPUCHCA").innerHTML= "$" + (toolingCostCHCA/unitPerYear).toFixed(2)
-document.getElementById("toolingCostPUCACH").innerHTML= "$" + (toolingCostCACH/unitPerYear).toFixed(2)
-document.getElementById("toolingCostPUCHCH").innerHTML= "$" + (toolingCostCHCH/unitPerYear).toFixed(2)
-document.getElementById("toolingCostPUMECA").innerHTML= "$" + (toolingCostMECA/unitPerYear).toFixed(2)
-
-//Quality Cost
-const qualityCostCACA = 5600
-const qualityCostCHCA = 6800
-const qualityCostCACH = 10000
-const qualityCostCHCH = 2000
-const qualityCostMECA = 4600
-document.getElementById("qualityCostCACA").innerHTML= "$" + (qualityCostCACA).toFixed(2)
-document.getElementById("qualityCostCHCA").innerHTML= "$" + (qualityCostCHCA).toFixed(2)
-document.getElementById("qualityCostCACH").innerHTML= "$" + (qualityCostCACH).toFixed(2)
-document.getElementById("qualityCostCHCH").innerHTML= "$" + (qualityCostCHCH).toFixed(2)
-document.getElementById("qualityCostMECA").innerHTML= "$" + (qualityCostMECA).toFixed(2)
-
-document.getElementById("qualityCostPUCACA").innerHTML= "$" + (qualityCostCACA/unitPerYear).toFixed(2)
-document.getElementById("qualityCostPUCHCA").innerHTML= "$" + (qualityCostCHCA/unitPerYear).toFixed(2)
-document.getElementById("qualityCostPUCACH").innerHTML= "$" + (qualityCostCACH/unitPerYear).toFixed(2)
-document.getElementById("qualityCostPUCHCH").innerHTML= "$" + (qualityCostCHCH/unitPerYear).toFixed(2)
-document.getElementById("qualityCostPUMECA").innerHTML= "$" + (qualityCostMECA/unitPerYear).toFixed(2)
-
 
 
 //rework risk
@@ -411,7 +358,7 @@ document.getElementById("trsCHCH").innerHTML= "$" + (trsCHCH).toFixed(2)
 document.getElementById("trsMECA").innerHTML= "$" + (trsMECA).toFixed(2)
 
 
-alert("ss")
+// alert("ss")
 }
 
 // }
