@@ -3575,8 +3575,16 @@ margin-right: 20px;
     }
 }
 
-
-
+.help_text{
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+    text-align: center;
+    font-family: 'montserrat-medium';
+}
+.help_text a {
+    text-decoration: none;
+    color: #259CF4;
+}
 /* ===================================================================
  * # footer
  *

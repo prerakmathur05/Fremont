@@ -127,7 +127,7 @@ function calculate(){
 
 //below are 5 inputs to be taken from user
 const productPrice=document.getElementById("unitPrice").value; //this is kept fixed 
-const unitPrice = 0;
+// const unitPrice = 0;
 const unitWeight= document.getElementById("unitWeight").value;
 const materialCost = document.getElementById("materialCost").value;
 const unitPerYear = document.getElementById("unitPerYear").value;
@@ -137,10 +137,10 @@ var productCost= document.getElementsByName("productPrice")
 for (var i=0;i<productCost.length;i++){
   productCost[i].innerHTML="$" + productPrice
 }
-var unitCost= document.getElementsByName("unitCost")
-for (var i=0;i<unitCost.length;i++){
-  unitCost[i].innerHTML="$" + unitPrice
-}
+// var unitCost= document.getElementsByName("unitCost")
+// for (var i=0;i<unitCost.length;i++){
+//   unitCost[i].innerHTML="$" + unitPrice
+// }
 var materialCostName= document.getElementsByName("materialCost")
 for (var i=0;i<materialCostName.length;i++){
   materialCostName[i].innerHTML="$" + materialCost
@@ -152,12 +152,10 @@ for (var i=0;i<directLaborName.length;i++){
 
 
 const materialOverhead= materialCost*0.03
-
-document.getElementById("materialOverheadCACA").innerHTML= "$" + materialOverhead
-document.getElementById("materialOverheadCHCA").innerHTML= "$" + materialOverhead
-document.getElementById("materialOverheadCACH").innerHTML= "$" + materialOverhead
-document.getElementById("materialOverheadCHCH").innerHTML= "$" + materialOverhead
-document.getElementById("materialOverheadMECA").innerHTML= "$" + materialOverhead
+var materialOverheadArray=document.getElementsByName("materialOverhead")
+for (var i=0;i<materialOverheadArray.length;i++){
+  materialOverheadArray[i].innerHTML="$" + materialOverhead.toFixed(2)
+}
 
 
 var unitsPerYearName= document.getElementsByName("unitsPerYear")
@@ -277,6 +275,7 @@ const cumulativeProductCACH= eval(materialCost) + eval(materialOverhead) +   eva
 const cumulativeProductCHCH= eval(materialCost) + eval(materialOverhead) +   eval(lcCHCH) + eval(shippingCostConstantFactorCHCH) + eval(dutyChargeCHCH)+ eval(customFeesCHCH) + eval(focCHCH) + eval(siCHCH)   
 const cumulativeProductMECA= eval(materialCost) + eval(materialOverhead) +   eval(lcMECA) + eval(shippingCostConstantFactorMECA) + eval(dutyChargeMECA)+ eval(customFeesMECA) + eval(focMECA) + eval(siMECA)
 
+
 //for Cumulative Product + shipping cost 
 document.getElementById("cpstCACA").innerHTML= "$" + cumulativeProductCACA.toFixed(2)
 document.getElementById("cpstCHCA").innerHTML= "$" + cumulativeProductCHCA.toFixed(2)
@@ -284,8 +283,8 @@ document.getElementById("cpstCACH").innerHTML= "$" + cumulativeProductCACH.toFix
 document.getElementById("cpstCHCH").innerHTML= "$" + cumulativeProductCHCH.toFixed(2)
 document.getElementById("cpstMECA").innerHTML= "$" + cumulativeProductMECA.toFixed(2)
 
-//for Cumulative Product + shipping cost for total units per year
 
+//for Cumulative Product + shipping cost for total units per year
 document.getElementById("cpstpyCACA").innerHTML= "$" + (cumulativeProductCACA * unitPerYear).toFixed(2)
 document.getElementById("cpstpyCHCA").innerHTML= "$" + (cumulativeProductCHCA * unitPerYear).toFixed(2)
 document.getElementById("cpstpyCACH").innerHTML= "$" + (cumulativeProductCACH * unitPerYear).toFixed(2)
@@ -329,6 +328,25 @@ document.getElementById("toolingCostPUCACH").innerHTML= "$" + (toolingCostCACH/u
 document.getElementById("toolingCostPUCHCH").innerHTML= "$" + (toolingCostCHCH/unitPerYear).toFixed(2)
 document.getElementById("toolingCostPUMECA").innerHTML= "$" + (toolingCostMECA/unitPerYear).toFixed(2)
 
+//Deployment cost
+const tdcCACA = 11800
+const tdcCHCA = 7600
+const tdcCACH = 12000
+const tdcCHCH = 3200
+const tdcMECA = 7700
+document.getElementById("tdcCACA").innerHTML= "$" + (tdcCACA).toFixed(2)
+document.getElementById("tdcCHCA").innerHTML= "$" + (tdcCHCA).toFixed(2)
+document.getElementById("tdcCACH").innerHTML= "$" + (tdcCACH).toFixed(2)
+document.getElementById("tdcCHCH").innerHTML= "$" + (tdcCHCH).toFixed(2)
+document.getElementById("tdcMECA").innerHTML= "$" + (tdcMECA).toFixed(2)
+
+document.getElementById("tdcPUCACA").innerHTML= "$" + (tdcCACA/unitPerYear).toFixed(2)
+document.getElementById("tdcPUCHCA").innerHTML= "$" + (tdcCHCA/unitPerYear).toFixed(2)
+document.getElementById("tdcPUCACH").innerHTML= "$" + (tdcCACH/unitPerYear).toFixed(2)
+document.getElementById("tdcPUCHCH").innerHTML= "$" + (tdcCHCH/unitPerYear).toFixed(2)
+document.getElementById("tdcPUMECA").innerHTML= "$" + (tdcMECA/unitPerYear).toFixed(2)
+
+
 //Quality Cost
 const qualityCostCACA = 5600
 const qualityCostCHCA = 6800
@@ -348,6 +366,92 @@ document.getElementById("qualityCostPUCHCH").innerHTML= "$" + (qualityCostCHCH/u
 document.getElementById("qualityCostPUMECA").innerHTML= "$" + (qualityCostMECA/unitPerYear).toFixed(2)
 
 
+//packaging cost
+
+//Per unit packaging costs (if necessary)
+const ppuCACA = 100
+const ppuCHCA = 100
+const ppuCACH = 100
+const ppuCHCH = 100
+const ppuMECA = 100
+
+document.getElementById("ppuCACA").innerHTML= "$" + (ppuCACA).toFixed(2)
+document.getElementById("ppuCHCA").innerHTML= "$" + (ppuCHCA).toFixed(2)
+document.getElementById("ppuCACH").innerHTML= "$" + (ppuCACH).toFixed(2)
+document.getElementById("ppuCHCH").innerHTML= "$" + (ppuCHCH).toFixed(2)
+document.getElementById("ppuMECA").innerHTML= "$" + (ppuMECA).toFixed(2)
+
+
+//Packaging transportation costs (if necessary)
+const ptcCACA = 0
+const ptcCHCA = 2995
+const ptcCACH = 0
+const ptcCHCH = 2995
+const ptcMECA = 1720
+
+document.getElementById("ptcCACA").innerHTML= "$" + (ptcCACA).toFixed(2)
+document.getElementById("ptcCHCA").innerHTML= "$" + (ptcCHCA).toFixed(2)
+document.getElementById("ptcCACH").innerHTML= "$" + (ptcCACH).toFixed(2)
+document.getElementById("ptcCHCH").innerHTML= "$" + (ptcCHCH).toFixed(2)
+document.getElementById("ptcMECA").innerHTML= "$" + (ptcMECA).toFixed(2)
+
+
+//Total packaging costs and transportation costs (if necessary)
+const tpcCACA = eval(ptcCACA) + eval(ppuCACA)
+const tpcCHCA = eval(ptcCHCA) + eval(ppuCACH)
+const tpcCACH = eval(ptcCACH) + eval(ppuCHCA)
+const tpcCHCH = eval(ptcCHCH) + eval(ppuCHCH)
+const tpcMECA = eval(ptcMECA) + eval(ppuMECA)
+
+document.getElementById("tpcCACA").innerHTML= "$" + (tpcCACA).toFixed(2)
+document.getElementById("tpcCHCA").innerHTML= "$" + (tpcCHCA).toFixed(2)
+document.getElementById("tpcCACH").innerHTML= "$" + (tpcCACH).toFixed(2)
+document.getElementById("tpcCHCH").innerHTML= "$" + (tpcCHCH).toFixed(2)
+document.getElementById("tpcMECA").innerHTML= "$" + (tpcMECA).toFixed(2)
+
+//Total packaging costs per unit (if necessary)
+const tpcPUCACA = eval(ptcCACA/unitPerYear) + eval(ppuCACA)
+const tpcPUCHCA = eval(ptcCHCA/unitPerYear) + eval(ppuCACH)
+const tpcPUCACH = eval(ptcCACH/unitPerYear) + eval(ppuCHCA)
+const tpcPUCHCH = eval(ptcCHCH/unitPerYear) + eval(ppuCHCH)
+const tpcPUMECA = eval(ptcMECA/unitPerYear) + eval(ppuMECA)
+
+document.getElementById("tpcPUCACA").innerHTML= "$" + (tpcPUCACA).toFixed(2)
+document.getElementById("tpcPUCHCA").innerHTML= "$" + (tpcPUCHCA).toFixed(2)
+document.getElementById("tpcPUCACH").innerHTML= "$" + (tpcPUCACH).toFixed(2)
+document.getElementById("tpcPUCHCH").innerHTML= "$" + (tpcPUCHCH).toFixed(2)
+document.getElementById("tpcPUMECA").innerHTML= "$" + (tpcPUMECA).toFixed(2)
+
+//Maintenance Cost
+const mcCACA = 13100
+const mcCHCA = 11100
+const mcCACH = 15500
+const mcCHCH = 4300
+const mcMECA = 9700
+document.getElementById("mcCACA").innerHTML= "$" + (mcCACA).toFixed(2)
+document.getElementById("mcCHCA").innerHTML= "$" + (mcCHCA).toFixed(2)
+document.getElementById("mcCACH").innerHTML= "$" + (mcCACH).toFixed(2)
+document.getElementById("mcCHCH").innerHTML= "$" + (mcCHCH).toFixed(2)
+document.getElementById("mcMECA").innerHTML= "$" + (mcMECA).toFixed(2)
+
+document.getElementById("mcPUCACA").innerHTML= "$" + (mcCACA/unitPerYear).toFixed(2)
+document.getElementById("mcPUCHCA").innerHTML= "$" + (mcCHCA/unitPerYear).toFixed(2)
+document.getElementById("mcPUCACH").innerHTML= "$" + (mcCACH/unitPerYear).toFixed(2)
+document.getElementById("mcPUCHCH").innerHTML= "$" + (mcCHCH/unitPerYear).toFixed(2)
+document.getElementById("mcPUMECA").innerHTML= "$" + (mcMECA/unitPerYear).toFixed(2)
+
+//design error risk
+const derCACA = 2800
+const derCHCA = 3400
+const derCACH = 5000
+const derCHCH = 1000
+const derMECA = 2300
+document.getElementById("derCACA").innerHTML= "$" + (derCACA).toFixed(2)
+document.getElementById("derCHCA").innerHTML= "$" + (derCHCA).toFixed(2)
+document.getElementById("derCACH").innerHTML= "$" + (derCACH).toFixed(2)
+document.getElementById("derCHCH").innerHTML= "$" + (derCHCH).toFixed(2)
+document.getElementById("derMECA").innerHTML= "$" + (derMECA).toFixed(2)
+
 
 //rework risk
 const rwrCACA = eval(productPrice) * 0.03
@@ -360,6 +464,7 @@ document.getElementById("rwrCHCA").innerHTML= "$" + (rwrCHCA).toFixed(2)
 document.getElementById("rwrCACH").innerHTML= "$" + (rwrCACH).toFixed(2)
 document.getElementById("rwrCHCH").innerHTML= "$" + (rwrCHCH).toFixed(2)
 document.getElementById("rwrMECA").innerHTML= "$" + (rwrMECA).toFixed(2)
+
 
 //ip risk
 const iprCACA = productPrice * 0.01
@@ -386,12 +491,13 @@ document.getElementById("trCACH").innerHTML= "$" + (trCACH).toFixed(2)
 document.getElementById("trCHCH").innerHTML= "$" + (trCHCH).toFixed(2)
 document.getElementById("trMECA").innerHTML= "$" + (trMECA).toFixed(2)
 
+
 //supplier risks
-const srCACA = productPrice * 0.05
-const srCHCA = productPrice * 0.15
-const srCACH = productPrice * 0.05
-const srCHCH = productPrice * 0.15
-const srMECA = productPrice * 0.1
+const srCACA = productPrice * 0.1
+const srCHCA = productPrice * 0.5
+const srCACH = productPrice * 0.1
+const srCHCH = productPrice * 0.5
+const srMECA = productPrice * 0.25
 document.getElementById("srCACA").innerHTML= "$" + (srCACA).toFixed(2)
 document.getElementById("srCHCA").innerHTML= "$" + (srCHCA).toFixed(2)
 document.getElementById("srCACH").innerHTML= "$" + (srCACH).toFixed(2)
@@ -411,7 +517,51 @@ document.getElementById("trsCHCH").innerHTML= "$" + (trsCHCH).toFixed(2)
 document.getElementById("trsMECA").innerHTML= "$" + (trsMECA).toFixed(2)
 
 
-alert("ss")
+document.getElementById("trsPUCACA").innerHTML= "$" + (trsCACA/unitPerYear).toFixed(2)
+document.getElementById("trsPUCHCA").innerHTML= "$" + (trsCHCA/unitPerYear).toFixed(2)
+document.getElementById("trsPUCACH").innerHTML= "$" + (trsCACH/unitPerYear).toFixed(2)
+document.getElementById("trsPUCHCH").innerHTML= "$" + (trsCHCH/unitPerYear).toFixed(2)
+document.getElementById("trsPUMECA").innerHTML= "$" + (trsMECA/unitPerYear).toFixed(2)
+
+//total costs
+const tocCACA = eval(trsCACA)+eval(mcCACA)+ eval(tpcCACA) + eval(qualityCostCACA) + eval(toolingCostCACA) + eval(tdcCACA) 
+const tocCHCA = eval(trsCHCA)+eval(mcCHCA)+ eval(tpcCHCA) + eval(qualityCostCHCA) + eval(toolingCostCHCA) + eval(tdcCHCA) 
+const tocCACH = eval(trsCACH)+eval(mcCACH)+ eval(tpcCACH) + eval(qualityCostCACH) + eval(toolingCostCACH) + eval(tdcCACH) 
+const tocCHCH = eval(trsCHCH)+eval(mcCHCH)+ eval(tpcCHCH) + eval(qualityCostCHCH) + eval(toolingCostCHCH) + eval(tdcCHCH) 
+const tocMECA = eval(trsMECA)+eval(mcMECA)+ eval(tpcMECA) + eval(qualityCostMECA) + eval(toolingCostMECA) + eval(tdcMECA) 
+document.getElementById("tocCACA").innerHTML= "$" + (tocCACA).toFixed(2)
+document.getElementById("tocCHCA").innerHTML= "$" + (tocCHCA).toFixed(2)
+document.getElementById("tocCACH").innerHTML= "$" + (tocCACH).toFixed(2)
+document.getElementById("tocCHCH").innerHTML= "$" + (tocCHCH).toFixed(2)
+document.getElementById("tocMECA").innerHTML= "$" + (tocMECA).toFixed(2)
+
+
+const tocPUCACA = tocCACA/unitPerYear 
+const tocPUCHCA = tocCHCA/unitPerYear 
+const tocPUCACH = tocCACH/unitPerYear 
+const tocPUCHCH = tocCHCH/unitPerYear 
+const tocPUMECA = tocMECA/unitPerYear 
+document.getElementById("tocPUCACA").innerHTML= "$" + (tocCACA/unitPerYear).toFixed(2)
+document.getElementById("tocPUCHCA").innerHTML= "$" + (tocCHCA/unitPerYear).toFixed(2)
+document.getElementById("tocPUCACH").innerHTML= "$" + (tocCACH/unitPerYear).toFixed(2)
+document.getElementById("tocPUCHCH").innerHTML= "$" + (tocCHCH/unitPerYear).toFixed(2)
+document.getElementById("tocPUMECA").innerHTML= "$" + (tocMECA/unitPerYear).toFixed(2)
+
+//Products + shipping + other cost
+const psoCACA = eval(tocPUCACA) + eval(cumulativeProductCACA)
+const psoCHCA = eval(tocPUCHCA) + eval(cumulativeProductCHCA)
+const psoCACH = eval(tocPUCACH) + eval(cumulativeProductCACH)
+const psoCHCH = eval(tocPUCHCH) + eval(cumulativeProductCHCH)
+const psoMECA = eval(tocPUMECA) + eval(cumulativeProductMECA)
+
+document.getElementById("psoPUCACA").innerHTML= "$" + (psoCACA).toFixed(2)
+document.getElementById("psoPUCHCA").innerHTML= "$" + (psoCHCA).toFixed(2)
+document.getElementById("psoPUCACH").innerHTML= "$" + (psoCACH).toFixed(2)
+document.getElementById("psoPUCHCH").innerHTML= "$" + (psoCHCH).toFixed(2)
+document.getElementById("psoPUMECA").innerHTML= "$" + (psoMECA).toFixed(2)
+
+
+// alert("calculations function executed successfully")
 }
 
 // }
